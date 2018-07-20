@@ -1,0 +1,7 @@
+language: bash
+jobs:
+  include:
+    - stage: test
+      script: echo test
+    - stage: deploy
+      script: echo deploy

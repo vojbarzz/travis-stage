@@ -7,7 +7,7 @@ jobs:
       before_script:
       - date
       install:
-      - sudo apt install jq
+      - sudo apt-get install -y jq
       script:
       - jq --version
     - stage: test

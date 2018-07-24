@@ -1,3 +1,4 @@
+language: bash
 env:
   global:
     - FOO=muhehe
@@ -31,8 +32,9 @@ jobs:
       language: bash
       script: ./wait.sh
     - stage: test
-      language: go
+      language: bash
       script: echo $FOO
     - stage: deploy
+      language: bash
       script: 
         - docker images

@@ -3,7 +3,9 @@ env:
   global:
     - FOO=muhehe
 services:
-        - docker
+  - docker
+script:
+  - docker pull nginx
 jobs:
   include:
     - stage: init
@@ -23,6 +25,7 @@ jobs:
       script: 
         - jq --version
         - docker pull busybox
+        - docker images
       env:
         - FOO3=muhehe3
     - stage: test

@@ -1,6 +1,17 @@
 language: bash
 jobs:
   include:
+    - stage: init
+      before_install:
+      - date
+      before_script:
+      - date
+      install:
+      - sudo apt install jq
+      script:
+      - jq --version
+    - stage: test
+      script: jq --version
     - stage: test
       script: ./wait.sh
     - stage: test

@@ -1,10 +1,12 @@
-language: bash
 env:
   global:
     - FOO=muhehe
+services:
+        - docker
 jobs:
   include:
     - stage: init
+      language: java
       before_install:
       - date
       before_script:
@@ -16,16 +18,21 @@ jobs:
       env:
         - FOO2=muhehe2
     - stage: test
-      script: jq --version
+      language: bash
+      script: 
+        - jq --version
+        - docker pull busybox
       env:
         - FOO3=muhehe3
     - stage: test
+      language: bash
       script: ./wait.sh
     - stage: test
+      language: bash
       script: ./wait.sh
     - stage: test
+      language: go
       script: echo $FOO
     - stage: deploy
       script: 
-        - echo $FOO2
-        - echo $FOO3
+        - docker images

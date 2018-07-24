@@ -2,6 +2,10 @@ language: bash
 jobs:
   include:
     - stage: test
-      script: echo test
+      script: ./wait.sh
+    - stage: test
+      script: ./wait.sh
+    - stage: test
+      script: ./wait.sh
     - stage: deploy
       script: echo deploy

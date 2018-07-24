@@ -7,5 +7,19 @@ jobs:
       script: ./wait.sh
     - stage: test
       script: ./wait.sh
+    - stage: test
+      script: ./wait.sh
+    - stage: test
+      script: ./wait.sh
+    - stage: test
+      script: ./wait.sh
+    - stage: test
+      script: ./wait.sh
+    - stage: test
+      script: ./wait.sh
+    - stage: test
+      script: ./wait.sh
+    - stage: test
+      script: ./wait.sh
     - stage: deploy
       script: echo deploy

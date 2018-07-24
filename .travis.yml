@@ -14,10 +14,11 @@ jobs:
       script:
       - jq --version
       env:
-        global:
-          - FOO2=muhehe2
+        - FOO2=muhehe2
     - stage: test
       script: jq --version
+      env:
+        - FOO3=muhehe3
     - stage: test
       script: ./wait.sh
     - stage: test
@@ -25,4 +26,6 @@ jobs:
     - stage: test
       script: echo $FOO
     - stage: deploy
-      script: echo $FOO2
+      script: 
+        - echo $FOO2
+        - echo $FOO3
